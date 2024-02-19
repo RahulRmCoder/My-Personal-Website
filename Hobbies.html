@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Hobbies</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<style>
+     @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Spartan", sans-serif;
+                }
+
+                html {
+                scroll-behavior: smooth;
+                }
+
+                /* Global Styles */
+
+                h1 {
+                font-size: 50px;
+                line-height: 64px;
+                color: #222;
+                }
+
+                h2 {
+                font-size: 46px;
+                line-height: 54px;
+                color: #222;
+                }
+
+
+                h4 {
+                font-size: 20px;
+                color: #222;
+                }
+
+                h6 {
+                font-weight: 700;
+                font-size: 12px;
+                }
+
+                p {
+                font-size: 16px;
+                color: #465b52;
+                margin: 15px 0 20px 0;
+                }
+
+                .section-p1 {
+                padding: 40px 80px;
+                }
+
+                .section-m1 {
+                margin: 40px 0;
+                }
+                button.normal{
+                font-size: 14px;
+                font-weight: 600;
+                padding: 15px 30px;
+                color: #000;
+                background-color: #fff;
+                border-radius: 4px;
+                border-radius: 4px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                transition: 0.2s;
+                }
+                button.white{
+                font-size: 13px;
+                font-weight: 600;
+                padding: 11px 18px;
+                color: #fff;
+                background-color: transparent;
+                cursor: pointer;
+                border: 1px solid #fff;
+                outline: none;
+                transition: 0.2s;
+                }
+
+                body {
+                width: 100%;
+                }
+                #header{
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 20px 80px;
+                    background-color: #252525;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+                    z-index: 999;
+                    position: sticky;
+                    top:0;
+                    left: 0;
+                    overflow: hidden;
+                }
+                .logo{
+                    position: relative;
+                    font-size: 25px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 600;
+                    cursor: default;
+                    letter-spacing: 5px;
+                    animation: slideRight 1s ease forwards;
+                }
+                #navbar{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+                #navbar li{
+                    list-style: none;
+                    padding: 0 20px;
+                    position: relative;
+                    transition: 0.3s;
+                    animation: slideUP 2s ease forwards;
+                    animation-delay: calc(0.2s * var(--i));
+                }#navbar li a{
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                    
+                
+                }
+                #navbar li a:hover,
+                #navbar li a.active,
+                #navbar li a.ONE {
+                    color: #0ef;
+                }
+                #navbar li a.active::after,
+                #navbar li a.ONE::after,
+                #navbar li a:hover::after{
+                    content: "";
+                    width: 30%;
+                    height: 2px;
+                    background-color: #0ef;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 20px;
+                }
+                @keyframes animate-path1 {
+                    100% {
+                        stroke-dashoffset: 180;
+                    }
+                }
+
+                @keyframes animate-path2 {
+                    100% {
+                        stroke-dashoffset: 140;
+                    }
+                }
+
+                @keyframes animate-path3 {
+                    100% {
+                        stroke-dashoffset: 90;
+                    }
+                }
+
+                @keyframes animate-path4 {
+                    100% {
+                        stroke-dashoffset: 50;
+                    }
+                }
+
+                @keyframes animate-bar {
+                    100% {
+                        stroke-dashoffset: -1;
+                    }
+                }
+
+                @keyframes showText {
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes animate {
+
+                    100% {
+                        transform: scaleX(1);
+                    }
+                }
+
+                @keyframes slideRight {
+                    0% {
+                        transform: translateX(-100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideTop {
+                    0% {
+                        transform: translateX(100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideBottom {
+                    0% {
+                        transform: translateX(-100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideUP {
+                    0% {
+                        transform: translateY(50px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateY(0px);
+                        opacity: 1;
+                    }
+                }
+                .cricket{
+                    width:50%;
+                margin-left:25%;
+                margin-top: 100px;
+                color: white;
+                font-family: Libre Baskerville, serif;
+                text-align: center;
+                }
+                .Picture{
+                    width:50%;
+                    border: 5px solid white;
+                }
+                #mobile{
+                display: none;
+                align-items: center;
+                }
+                #close{
+                display: none;
+                }
+                @media (max-width:799px){
+            #navbar{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: fixed;
+                top: 0;
+                right: -300px;
+                height: 100vh;
+                width: 300px;
+                background-color:#252525;
+                box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+                padding: 80px 0 0 10px;
+                transition: 0.8s;
+
+            }
+            #navbar.active{
+                right: 0px;
+            }
+            #navbar li{
+                margin-bottom: 25px;
+            }
+            #mobile{
+                display: flex;
+                align-items: center;
+            }
+            #mobile i{
+                font-size: 24px;
+                padding-left: 20px;
+            }
+            #close{
+                display: initial;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                color: #222;
+                font-size: 24px;
+
+            }
+            }
+            @media (max-width:400px){
+                .Picture {
+                width: 100%;
+                border: 5px solid white ;
+            }
+            element.style {
+    font-family: Libre Baskerville, serif;
+    text-align: center;
+    color: white;
+    font-size: 2rem;
+    padding-top: 30px;
+}
+            }
+               
+    </style>
+<body style="background-color: black;">
+    <section id="header">
+        <a href="#" class="logo">rahulrmcoder</a>
+        <div>
+            <ul id="navbar">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="About.html" >About</a></li>
+                <li><a href="Qualification.html">Qualification</a></li>
+                <li><a href="Skills.html">Skills</a></li>
+                <li><a href="Hobbies.html"class="ONE">Hobbies</a></li>
+                <a href="#" id="close"><i class="fa-solid fa-xmark" style="color: #e15a2d;"></i></a>
+            </ul>
+        </div>
+        <div id="mobile">
+            <i id="bar" class="fas fa-outdent"></i>
+        </div>
+    </section>
+    <h1 style="font-family: Libre Baskerville, serif;
+    text-align: center;
+    color:#0ef;
+    font-size: 3rem;">MY HOBBIES</h1>
+    <hr>
+    <h2 style="color: white;
+    text-align: center;
+    font-family: Libre Baskerville, serif;
+    font-size: 2rem;">1.Watching Cricket</h2>
+    <div class="cricket">
+        <img class="Picture" src="cricket.jpg">
+        <h3 style="font-family: Libre Baskerville, serif;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;padding-top: 30px;">Cricket is my favourite sport</h3>
+        <p style="color: #fff;">Since I was 5 years old I am watching cricket and I support Team India in the international cricket and in IPL I support Chennai Super Kings. </p>
+    </div><hr>
+    <h2 style="color: white;
+    text-align: center;
+    font-family: Libre Baskerville, serif;
+    font-size: 2rem;">2.Listening to Music</h2>
+    <div class="cricket">
+        <img class="Picture" src="weeknd.avif">
+        <h3 style="font-family: Libre Baskerville, serif;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;padding-top: 30px;">In a Stressful World, Music is the Best Anti-Stress Medicine </h3>
+        <p style="color: #fff;">My favourite English singer Abel and favourite Hindi singer is Arjith Singh.</p>
+    </div><hr>
+    <h2 style="color: white;
+    text-align: center;
+    font-family: Libre Baskerville, serif;
+    font-size: 2rem;">3.Playing Badminton</h2>
+    <div class="cricket">
+        <img class="Picture" src="frame-harirak-UR_mNYmpwco-unsplash.jpg">
+        <h3 style="font-family: Libre Baskerville, serif;
+        text-align: center;
+        color: white;
+        font-size: 1.5rem;padding-top: 30px;">One of the best sport for quick reflexes and focus </h3>
+        <p style="color: #fff;">My favourite players are Kidambi Srikant, PV Sindhu, Satwiksairaj Rankireddy and Chirag Shetty.</p>
+    </div>
+    <script src="script.js"></script>
+    </body>
+</html>

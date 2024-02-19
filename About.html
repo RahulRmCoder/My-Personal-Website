@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>About-Me</title>
+        <link rel="shortcut icon" href=""image/x-icon">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+        <style>
+            @import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+                font-family: "Spartan", sans-serif;
+                }
+
+                html {
+                scroll-behavior: smooth;
+                }
+
+                /* Global Styles */
+
+                h1 {
+                font-size: 50px;
+                line-height: 64px;
+                color: #222;
+                }
+
+                h2 {
+                font-size: 46px;
+                line-height: 54px;
+                color: #222;
+                }
+
+
+                h4 {
+                font-size: 20px;
+                color: #222;
+                }
+
+                h6 {
+                font-weight: 700;
+                font-size: 12px;
+                }
+
+                p {
+                font-size: 16px;
+                color: #465b52;
+                margin: 15px 0 20px 0;
+                }
+
+                .section-p1 {
+                padding: 40px 80px;
+                }
+
+                .section-m1 {
+                margin: 40px 0;
+                }
+                button.normal{
+                font-size: 14px;
+                font-weight: 600;
+                padding: 15px 30px;
+                color: #000;
+                background-color: #fff;
+                border-radius: 4px;
+                border-radius: 4px;
+                cursor: pointer;
+                border: none;
+                outline: none;
+                transition: 0.2s;
+                }
+                button.white{
+                font-size: 13px;
+                font-weight: 600;
+                padding: 11px 18px;
+                color: #fff;
+                background-color: transparent;
+                cursor: pointer;
+                border: 1px solid #fff;
+                outline: none;
+                transition: 0.2s;
+                }
+
+                body {
+                width: 100%;
+                }
+                #header{
+                    display:flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 20px 80px;
+                    background-color: #252525;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.06);
+                    z-index: 999;
+                    position: sticky;
+                    top:0;
+                    left: 0;
+                    overflow: hidden;
+                }
+                .logo{
+                    position: relative;
+                    font-size: 25px;
+                    color: #fff;
+                    text-decoration: none;
+                    font-weight: 600;
+                    cursor: default;
+                    letter-spacing: 5px;
+                    animation: slideRight 1s ease forwards;
+                }
+                #navbar{
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                }
+                #navbar li{
+                    list-style: none;
+                    padding: 0 20px;
+                    position: relative;
+                    transition: 0.3s;
+                    animation: slideUP 2s ease forwards;
+                    animation-delay: calc(0.2s * var(--i));
+                }#navbar li a{
+                    text-decoration: none;
+                    font-size: 20px;
+                    font-weight: 600;
+                    color: #fff;
+                    
+                
+                }
+                #navbar li a:hover,
+                #navbar li a.active,
+                #navbar li a.ONE {
+                    color: #0ef;
+                }
+                #navbar li a.active::after,
+                #navbar li a.ONE::after,
+                #navbar li a:hover::after{
+                    content: "";
+                    width: 30%;
+                    height: 2px;
+                    background-color: #0ef;
+                    position: absolute;
+                    bottom: -4px;
+                    left: 20px;
+                }
+                .about {
+                    background-color: black;
+                    display: grid;
+                    grid-template-columns: repeat(2, .5fr);
+                    /*align-items: center;*/
+                    /*gap: 1.5rem;*/
+                    width: 100%;
+                    justify-content: space-between;
+                    min-height: 100vh;
+                    padding: 70px 5% 0;
+                }
+
+                .about-img {
+                    display: inline-block;
+                    background-repeat: no-repeat;
+                    background-position: center center;
+                    background-size: cover;
+                    padding-right: 10%;
+                    margin-top: 2.5%;
+                    /*margin-top: 7.5%;*/
+                    opacity: 1;
+                }
+
+                .abt-res {
+                    width: 100%;
+                    height: auto;
+                    max-width: 492px;
+                    max-height: 492px;
+                    border-radius: 90px;
+                    /*box-shadow: 0 0 5pc cyan, 0 0 5px cyan, 0 0 10px cyan;*/
+                    border: #0ef 5px solid;
+                }
+
+                .about-text {
+                    margin-right: 2%;
+                }
+
+                .about-text h2 {
+                    font-size: 60px;
+                    letter-spacing: 5px;
+                    color: #0ef;
+                }
+
+                .about-text h2 span {
+                    color: #0ef;
+                }
+
+                .about-text p {
+                    color: aliceblue;
+                    font-size: 20px;
+                    line-height: 2;
+                    letter-spacing: 2px;
+                    margin-bottom: 4rem;
+                    text-align: justify;
+                    text-justify: inter-word;
+                }
+
+                .abtbtn-box {
+                    display: inline-block;
+                    padding: 12px 28px;
+                    background: #0ef;
+                    border-radius: 40px;
+                    font-size: 15px;
+                    text-align: center;
+                    color: #081b29;
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    font-weight: 600;
+                }
+
+                .abtbtn-box:hover {
+                    box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
+                }
+                @keyframes animate-path1 {
+                    100% {
+                        stroke-dashoffset: 180;
+                    }
+                }
+
+                @keyframes animate-path2 {
+                    100% {
+                        stroke-dashoffset: 140;
+                    }
+                }
+
+                @keyframes animate-path3 {
+                    100% {
+                        stroke-dashoffset: 90;
+                    }
+                }
+
+                @keyframes animate-path4 {
+                    100% {
+                        stroke-dashoffset: 50;
+                    }
+                }
+
+                @keyframes animate-bar {
+                    100% {
+                        stroke-dashoffset: -1;
+                    }
+                }
+
+                @keyframes showText {
+                    100% {
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes animate {
+
+                    100% {
+                        transform: scaleX(1);
+                    }
+                }
+
+                @keyframes slideRight {
+                    0% {
+                        transform: translateX(-100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideTop {
+                    0% {
+                        transform: translateX(100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideBottom {
+                    0% {
+                        transform: translateX(-100px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateX(0px);
+                        opacity: 1;
+                    }
+                }
+
+                @keyframes slideUP {
+                    0% {
+                        transform: translateY(50px);
+                        opacity: 0;
+                    }
+
+                    100% {
+                        transform: translateY(0px);
+                        opacity: 1;
+                    }
+                }
+                #mobile{
+                display: none;
+                align-items: center;
+                }
+                #close{
+                display: none;
+                }
+
+            @media (max-width:799px){
+            #navbar{
+                display: flex;
+                flex-direction: column;
+                align-items: flex-start;
+                justify-content: flex-start;
+                position: fixed;
+                top: 0;
+                right: -300px;
+                height: 100vh;
+                width: 300px;
+                background-color:#252525;
+                box-shadow: 0 40px 60px rgba(0,0,0,0.1);
+                padding: 80px 0 0 10px;
+                transition: 0.8s;
+
+            }
+            #navbar.active{
+                right: 0px;
+            }
+            #navbar li{
+                margin-bottom: 25px;
+            }
+            #mobile{
+                display: flex;
+                align-items: center;
+            }
+            #mobile i{
+                font-size: 24px;
+                padding-left: 20px;
+            }
+            #close{
+                display: initial;
+                position: absolute;
+                top: 30px;
+                left: 30px;
+                color: #222;
+                font-size: 24px;
+
+            }
+            }
+            @media (max-width: 400px) {
+    #header {
+        padding: 20px;
+    }
+
+    .about {
+        grid-template-columns: 1fr;
+        padding: 20px;
+    }
+
+    .about-img {
+        padding-right: 0;
+        margin-top: 0;
+    }
+
+    .about-text {
+        margin-right: 0;
+    }
+
+    .about-text h2 {
+        font-size: 40px;
+    }
+
+    .about-text p {
+        font-size: 14px;
+        margin-bottom: 2rem;
+    }
+
+    .abtbtn-box {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
+}
+
+        </style>
+    </head>
+
+    <body>
+        <section id="header">
+            <a href="#" class="logo">rahulrmcoder</a>
+            <div>
+                <ul id="navbar">
+                    <li><a href="index.html" style="--i:1" >Home</a></li>
+                    <li><a href="About.html" style="--i:2" class="ONE" >About</a></li>
+                    <li><a href="Qualification.html" style="--i:3" >Qualification</a></li>
+                    <li><a href="Skills.html" style="--i:4" >Skills</a></li>
+                    <li><a href="Hobbies.html" style="--i:5" >Hobbies</a></li>
+                    <a href="#" id="close"><i class="fa-solid fa-xmark" style="color: #e15a2d;"></i></a>
+                </ul>
+            </div>
+            <div id="mobile">
+                <i id="bar" class="fas fa-outdent"></i>
+            </div>
+        </section>
+        <section>
+            <div class="about" id="About">
+                <div class="about-img">
+                    <img src="Mypic.png" class="abt-res">
+                </div>
+                <div class="about-text">
+                    <h2>About <span>Me</span></h2>
+                    <p>
+                        I'm a first-year <span style="color: #0ef;font-weight: 800;">Computer Science</span> student at <span style="color: #0ef;font-weight: 800;">Jain University</span> in Bengaluru. Passionate about technology, I've learned <span style="color: rgb(0, 51, 255);font-weight: 800;">Python</span>, <span style="color: rgb(255, 111, 0);font-weight: 800;">Java</span>, <span style="color: rgb(0, 128, 255);font-weight: 800;">C</span>, and explored areas like <span style="color: #0ef;font-weight: 800;">AI, Data Science, and full-stack development</span>. I completed a Web Development course with IIT Roorkee, <span style="color: #0ef;font-weight: 800;">worked on projects in ML and DL</span>, and enrolled in an <span style="color: #0ef;font-weight: 800;">Executive PG Certification in Data Science and AI by IIT Roorkee</span>. Additionally, I'm actively learning <span style="color: #0ef;font-weight: 800;">Cybersecurity</span> from <span style="color: rgb(0, 128, 255);font-weight: 800;">G</span><span style="color: rgb(255, 42, 0);font-weight: 800;">o</span><span style="color: rgb(237, 195, 8);font-weight: 800;">o</span><span style="color: rgb(0, 128, 255);font-weight: 800;">g</span><span style="color: rgb(39, 147, 0);font-weight: 800;">l</span><span style="color: rgb(255, 42, 0);font-weight: 800;">e</span>. My goal is to contribute to a more advanced and peaceful world through practical applications of my skills.<br>
+                        <br>
+                        <a href="https://docs.google.com/document/d/13QcOwMvecehFBrobXqp9lrZ5eGBgL-FvCpA2OmmAzWA/edit" style="--i:11" class="abtbtn-box" target="_blank">My Resume</a>
+                    </p>
+                </div>
+            </div>
+        </section>
+        <script src="script.js"></script>
+    </body>
+    </html>
+        
